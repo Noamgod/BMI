@@ -17,7 +17,7 @@ public class Left extends View {
         super(x, y, w, h, color);
         this.setLayout(null);
 
-        detailsP = creatPanel(10, 100, 120, 380, color);
+        detailsP = creatPanel(10, 100, 120, 375, color);
         detailsP.setBorder(new TitledBorder("Details"));
 
         name = creatLabel("First name: ", 10, 15, 200, 30, 20, Def.italy);
@@ -39,7 +39,7 @@ public class Left extends View {
         ageBox.setBounds(60, 150, 50, 30);
 
 
-        heightP = creatPanel(140, 100, 158, 380, color);
+        heightP = creatPanel(140, 100, 158, 375, color);
         heightP.setBorder(new TitledBorder("Height"));
         heightL = creatLabel("Height", 80, 120, 80, 30, 22, Def.bold);
         heightScore = creatLabel("", 90, 160, 80, 30, 22, Def.regular);

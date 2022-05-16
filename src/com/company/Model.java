@@ -4,45 +4,42 @@ import java.awt.*;
 
 public class Model {
 
-    public Model() {
-        CalSlimness();
-        PaintResults();
-    }
 
-    private void PaintResults() {
+
+    public void PaintResults() {
         if (Data.bmi < 15) {
             Right.statusL.setText("Anorexic");
-            Setbackground(Color.red);
+            SetBackground(Color.red);
         } else if (Data.bmi < 18.5) {
             Right.statusL.setText("Underweight ");
-            Setbackground(Color.yellow);
+            SetBackground(Color.yellow);
         } else if (Data.bmi < 24.9) {
             Right.statusL.setText("Normal");
-            Setbackground(new Color(50, 233, 132));
+            SetBackground(new Color(50, 233, 132));
         } else if (Data.bmi < 29.9) {
             Right.statusL.setText("Overweight");
-            Setbackground(Color.yellow);
+            SetBackground(Color.yellow);
         } else if (Data.bmi < 35) {
             Right.statusL.setText("Obese");
-            Setbackground(Color.orange);
+            SetBackground(Color.orange);
         } else {
             Right.statusL.setText("Extreme Obese");
-            Setbackground(Color.red);
+            SetBackground(Color.red);
         }
     }
 
-    private void CalSlimness() {
-        if (Controller.score == Center.smaleR) {
+    public void CalSlimness() {
+        if (Controller.score==Center.smaleR) {
             Data.slimness = 0.9;
-        } else if (Controller.score == Center.mediumR) {
+        } else if (Controller.score==Center.mediumR) {
             Data.slimness = 1;
-        } else {
+        } else if (Controller.score==Center.largeR){
             Data.slimness = 1.1;
         }
     }
 
 
-    private void Setbackground(Color color) {
+    private void SetBackground(Color color) {
 
         BMI.left.setBackground(color);
         BMI.center.setBackground(color);

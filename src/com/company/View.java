@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class View extends JPanel {
     public Controller control = new Controller();
-    public  static Color color =new Color(46, 166, 166, 255);
+    public static Color color = new Color(46, 166, 166, 255);
 
 
     public View(int x, int y, int w, int h, Color color) {
@@ -39,9 +39,16 @@ public class View extends JPanel {
         return field;
     }
 
-    public JRadioButton creatRadio(int x, int y, int w, int h,ActionListener listener) {
+    public JRadioButton creatRadio(int x, int y, int w, int h, ActionListener listener) {
         JRadioButton r = new JRadioButton();
         r.addActionListener(listener);
+        r.setBounds(x, y, w, h);
+        r.setOpaque(false);
+        return r;
+    }
+
+    public JRadioButton creatRadio(int x, int y, int w, int h) {
+        JRadioButton r = new JRadioButton();
         r.setBounds(x, y, w, h);
         r.setOpaque(false);
         return r;

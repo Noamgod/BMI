@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
@@ -15,8 +16,14 @@ public class Controller implements ActionListener, ChangeListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        score=e.getSource();
+        m = new Model();
+        m.CalSlimness();
+
         if (e.getSource().equals(Right.submitB)) {
             String temp = Integer.toString(Left.ageBox.getSelectedIndex() + 1);
+
             String temp1 = Center.actualT.getText();
 
             if (Objects.equals(temp1, "") || Objects.equals(temp1, " I Need you man")) {
@@ -31,18 +38,18 @@ public class Controller implements ActionListener, ChangeListener {
             }
 
             if (!Objects.equals(temp1, "") && !Objects.equals(temp1, " I Need you man")) {
+
                 Data.age = Double.parseDouble(temp);
                 Data.weight = Double.parseDouble(temp1);
-
-
                 Data.bmi = Double.parseDouble(new DecimalFormat("##.##").format(Data.weight / Math.pow(Data.height, 2) * 10000));
                 String text = Double.toString(Data.bmi);
-                m = new Model();
                 Right.bmiL.setText(text);
+                System.out.println( "s:  " + Data.slimness);
                 Data.ideal = Double.parseDouble(new DecimalFormat("##.##").format((Data.height - 100 + (Data.age / 10)) * 0.9 * Data.slimness));
                 String temp2 = Double.toString(Data.ideal);
                 Center.idealT.setText(temp2);
                 Center.actualT.setText(temp1);
+                m.PaintResults();
             }
         }
     }

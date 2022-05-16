@@ -9,9 +9,8 @@ public class Center extends View {
     public static JPanel bodyP, genderP, weightP;
     public static JLabel bmiL, actualL, idealL;
     public static JRadioButton smaleR, mediumR, largeR;
-    public JRadioButton male;
-    public JRadioButton female;
-    public JLabel maleL, femaleL, height, smaleL, mediumL, largeL;
+    public JRadioButton male,female;
+    public JLabel maleL, femaleL,  smaleL, mediumL, largeL;
     public static JTextField actualT, idealT;
 
 
@@ -40,9 +39,9 @@ public class Center extends View {
 
         genderP.setBorder(new TitledBorder("Gender"));
         maleL = creatLabel("Male", 20, 20, 50, 30, 20, Def.italy);
-        male = creatRadio(30, 60, 20, 20, control);
+        male = creatRadio(30, 60, 20, 20);
         femaleL = creatLabel("Female", 100, 20, 80, 30, 20, Def.italy);
-        female = creatRadio(110, 60, 20, 20, control);
+        female = creatRadio(110, 60, 20, 20);
 
         weightP.setBorder(new TitledBorder("Weight"));
         actualL = creatLabel("Actual Weight", 10, 30, 120, 30, 20, Def.italy);
@@ -54,6 +53,8 @@ public class Center extends View {
 
         groupBodyFrame.add(male);
         groupBodyFrame.add(female);
+
+
         groupGender.add(smaleR);
         groupGender.add(mediumR);
         groupGender.add(largeR);
